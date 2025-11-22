@@ -1127,19 +1127,6 @@ const modulesData = [
       },
     ],
   },
-  // add levels 2..5 and classes
-  {
-    sectionId: "classes",
-    title: "Modul Classes",
-    items: [
-      {
-        id: "c1",
-        title: "Core Technical Analysis",
-        desc: "Core Techniques",
-        videoId: "dQw4w9WgXcQ",
-      },
-    ],
-  },
 ];
 
 export default function Page() {
