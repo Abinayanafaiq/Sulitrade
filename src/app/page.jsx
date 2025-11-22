@@ -1100,7 +1100,6 @@ const modulesData = [
         desc: "Analysis",
         videoUrl: "https://youtu.be/oYvNeYBLYCM",
       },
-
       {
         id: "l1-32",
         title: "Apakah Kamu Cocok Untuk Web 3 Jobs",
@@ -1157,35 +1156,37 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-black text-gray-100">
       <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-900/80 to-slate-900/80 backdrop-blur-sm border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-3xl font-extrabold tracking-tight">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">
             New & For You
           </h1>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <input
               className="hidden sm:block px-3 py-2 rounded-md bg-slate-800/60 placeholder-gray-400 text-sm"
               placeholder="Search"
             />
-            <div className="text-sm text-slate-400">Modul Suli</div>
+            <div className="text-xs sm:text-sm text-slate-400">Modul Suli</div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-10">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-10">
         {!unlocked ? (
-          <div className="max-w-xl mx-auto bg-slate-900/60 border border-slate-800 rounded-xl p-8 shadow-xl">
-            <h2 className="text-xl font-semibold mb-4">Masukkan Password</h2>
+          <div className="max-w-xl mx-auto bg-slate-900/60 border border-slate-800 rounded-xl p-6 sm:p-8 shadow-xl">
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">
+              Masukkan Password
+            </h2>
             <input
               value={pw}
               onChange={(e) => setPw(e.target.value)}
               type="password"
               placeholder="Password..."
-              className="w-full px-4 py-3 rounded-md bg-slate-800/50 placeholder-gray-400 focus:outline-none"
+              className="w-full px-4 py-3 rounded-md bg-slate-800/50 placeholder-gray-400 focus:outline-none text-base"
             />
             <div className="flex items-center gap-3 mt-4">
               <button
                 onClick={handleUnlock}
-                className="px-4 py-2 bg-indigo-600 rounded-md"
+                className="px-4 py-2 bg-indigo-600 rounded-md text-sm sm:text-base"
               >
                 Masuk
               </button>
@@ -1194,14 +1195,15 @@ export default function Page() {
                   setPw("");
                   setError("");
                 }}
-                className="px-4 py-2 border rounded-md"
+                className="px-4 py-2 border rounded-md text-sm sm:text-base"
               >
                 Reset
               </button>
             </div>
-            {error && <p className="text-red-400 mt-3">{error}</p>}
-            <p className="text-sm text-slate-400 mt-4">
-              Password bersifat case-sensitive.
+            {error && <p className="text-red-400 mt-3 text-sm">{error}</p>}
+            <p className="text-xs sm:text-sm text-slate-400 mt-4">
+              Password bersifat case-sensitive. Ganti hash di{" "}
+              <code>src/password.js</code> untuk update password.
             </p>
           </div>
         ) : (
