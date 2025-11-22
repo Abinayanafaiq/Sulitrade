@@ -1119,6 +1119,12 @@ const modulesData = [
         desc: "Analysis",
         videoUrl: "https://youtu.be/TME8XUqbisQ",
       },
+      {
+        id: "l1-1",
+        title: "Zero To Hero Web3 Jobs",
+        desc: "Analysis",
+        videoUrl: "https://youtu.be/TME8XUqbisQ",
+      },
     ],
   },
   // add levels 2..5 and classes
