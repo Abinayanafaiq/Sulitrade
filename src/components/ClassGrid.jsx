@@ -4,6 +4,7 @@ import VideoCard from "./VideoCard";
 
 // extractor regex
 function extractYouTubeId(url) {
+  if (!url) return null;
   const re =
     /(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|v\/))([A-Za-z0-9_-]{11})/;
   const m = url.match(re);
@@ -23,7 +24,12 @@ export default function ClassGrid({ modulesData }) {
   };
 
   const onView = (video) => {
-    const id = extractYouTubeId(video.videoUrl);
+    // Prioritas: jika sudah ada videoId langsung, pakai itu
+    // Jika tidak, extract dari videoUrl
+    let id = video.videoId;
+    if (!id && video.videoUrl) {
+      id = extractYouTubeId(video.videoUrl);
+    }
 
     setActive({
       ...video,
