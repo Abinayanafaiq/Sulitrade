@@ -1,5 +1,5 @@
 export const correctHash =
-  "720f3315980c21b7a41fea4c7404538bbe306af23c9e42f5f5b1b8a786664089";
+  "669da9b37d25b71f7293cd9e2b26a8ff1069204a32e1a196f9220dc1dbe6590e";
 
 export async function sha256(str) {
   const buffer = new TextEncoder().encode(str);
